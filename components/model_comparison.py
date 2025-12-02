@@ -12,7 +12,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 from modules.visualization import Visualizer
 from modules.evaluation import ModelEvaluator
-from modules.utils import get_performance_color, get_medal, export_results_to_excel
+from modules.utils import  get_medal, export_results_to_excel
 
 # Main function to render the model comparison page
 def render_model_comparison():
@@ -291,14 +291,14 @@ def render_head_to_head(results: list):
         radar_metrics = ['R²', 'RPD', 'Correlation']
         
         # Get normalized values
-        all_r2 = [r.get('test_r2', 0) for r in results]
-        all_rpd = [r.get('rpd', 0) for r in results]
-        all_corr = [r.get('correlation', 0) for r in results]
-        all_rmse = [r.get('test_rmse', 0) for r in results]
+        all_r2    = [r.get('test_r2', 0) for r in results]
+        all_rpd   = [r.get('rpd', 0) for r in results]
+        all_corr  = [r.get('correlation', 0) for r in results]
+        all_rmse  = [r.get('test_rmse', 0) for r in results]
         
         model1_values = [
             model1_data.get('test_r2', 0),
-            model1_data.get('rpd', 0) / max(all_rpd) if max(all_rpd) > 0 else 0,
+            model1_data.get('rpd', 0) / max(all_rpd) > max(all_rpd) ? 0 : 0,
             model1_data.get('correlation', 0),
             1 - (model1_data.get('test_rmse', 0) / max(all_rmse)) if max(all_rmse) > 0 else 0
         ]

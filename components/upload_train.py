@@ -787,9 +787,9 @@ def render_playground_tab(model_factory: ModelFactory):
                             improvement = ((new_r2 - old_r2) / old_r2) * 100 if old_r2 > 0 else 0
                             st.success(f"🎉 **Improved R² by {improvement:.1f}%!** Grid Search found better parameters.")
                         elif new_r2 < old_r2:
-                            st.warning(f"⚠️ R² decreased. The default parameters may already be optimal for this dataset.")
+                            st.warning(f"⚠️ R² Decreased . The default parameters may already be optimal for this dataset.")
                         else:
-                            st.info("Performance unchanged. Current parameters are already optimal.")
+                            st.info("Performance not changed. Current parameters are already optimal.")
                         
                         # Show all results in expander
                         with st.expander("📋 View All Grid Search Results"):
