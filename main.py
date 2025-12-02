@@ -61,7 +61,7 @@ PREPROCESSING = {
 # --- Main Processing Loop ---
 
 results_log = []
-
+# Loop through each file
 for file_path in files_to_process:
     print(f"\n--- Processing File: {file_path} ---")
     try:

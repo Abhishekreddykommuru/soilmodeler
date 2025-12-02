@@ -14,7 +14,7 @@ from modules.visualization import Visualizer
 from modules.evaluation import ModelEvaluator
 from modules.utils import get_performance_color, get_medal, export_results_to_excel
 
-
+# Main function to render the model comparison page
 def render_model_comparison():
     """Render the model comparison page."""
     
