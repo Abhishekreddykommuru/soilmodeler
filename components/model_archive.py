@@ -52,7 +52,7 @@ def render_model_archive():
 def render_training_history():
     """Render training history section."""
     
-    st.markdown("### 📚 Training Runs History")
+    st.markdown("### 📚 TRAINING RUNS History")
     
     history = st.session_state.get('training_history', [])
     

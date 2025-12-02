@@ -86,11 +86,12 @@ def render_model_comparison():
     with tabs[4]:
         render_ensemble_analysis(successful_results)
 
+   
 
 def render_leaderboard(results: list, visualizer: Visualizer):
     """Render the model leaderboard."""
     
-    st.markdown("### 🏆 Model Leaderboard")
+    st.markdown("###🏆 MODEL Leaderboard")
     
     # Filters
     col1, col2, col3 = st.columns(3)
@@ -125,7 +126,7 @@ def render_leaderboard(results: list, visualizer: Visualizer):
     ascending = sort_by in ["test_rmse", "test_mae"]  # Lower is better
     sorted_results = sorted(filtered_results, key=lambda x: x.get(sort_by, 0), reverse=not ascending)
     
-    # Create leaderboard table
+    # Creating leaderboard table
     st.markdown("---")
     
     # Display as styled dataframe
@@ -165,7 +166,7 @@ def render_leaderboard(results: list, visualizer: Visualizer):
     
     st.dataframe(styled_df, use_container_width=True, height=400)
     
-    # Best performer summary
+    # Summary of best performer
     if sorted_results:
         best = sorted_results[0]
         st.markdown(f"""
@@ -207,6 +208,7 @@ def render_leaderboard(results: list, visualizer: Visualizer):
             st.rerun()
 
 
+
 def render_head_to_head(results: list):
     """Render head-to-head model comparison."""
     
@@ -235,7 +237,7 @@ def render_head_to_head(results: list):
         st.markdown("---")
         
         # Comparison metrics table
-        st.markdown("### 📊 Metrics Comparison")
+        st.markdown("### 📊 METRICS Comparison")
         
         metrics = [
             ('R² (Test)', 'test_r2', True),  # Higher is better
@@ -378,7 +380,7 @@ def render_head_to_head(results: list):
         </div>
         """, unsafe_allow_html=True)
         
-        # Side-by-side bar chart
+        # Simple bar chart comparison
         st.markdown("### 📊 Bar Chart Comparison")
         
         bar_metrics = ['R²', 'RPD', 'Correlation']
