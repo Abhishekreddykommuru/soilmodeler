@@ -1,0 +1,431 @@
+/* 
+ * Spectral Soil Modeler - Custom Styles
+ * =====================================
+ * Dark theme optimized for professional scientific applications
+ */
+
+/* ======================================
+   ROOT VARIABLES
+   ====================================== */
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #50C878;
+    --accent-color: #FFB84D;
+    --background-dark: #0E1117;
+    --background-card: #262B33;
+    --background-hover: #2E3440;
+    --text-primary: #FAFAFA;
+    --text-secondary: #B0B0B0;
+    --border-color: #3A3F4B;
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --error-color: #FF6B6B;
+    --info-color: #2196F3;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-success: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+}
+
+/* ======================================
+   MAIN CONTAINER
+   ====================================== */
+.main {
+    padding: 1rem 2rem;
+}
+
+.stApp {
+    background-color: var(--background-dark);
+}
+
+/* ======================================
+   TYPOGRAPHY
+   ====================================== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+/* ======================================
+   CARDS
+   ====================================== */
+.metric-card {
+    background: linear-gradient(135deg, var(--background-card) 0%, #1E2329 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+/* Navigation Cards */
+.nav-card {
+    background: var(--background-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-card:hover {
+    background: var(--background-hover);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+}
+
+.nav-card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.nav-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.nav-card-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ======================================
+   STATUS BOXES
+   ====================================== */
+.status-success {
+    background: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid var(--success-color);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.5rem 0;
+}
+
+.status-warning {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid var(--warning-color);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.5rem 0;
+}
+
+.status-error {
+    background: rgba(244, 67, 54, 0.1);
+    border-left: 4px solid var(--error-color);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.5rem 0;
+}
+
+.status-info {
+    background: rgba(33, 150, 243, 0.1);
+    border-left: 4px solid var(--info-color);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.5rem 0;
+}
+
+/* ======================================
+   BUTTONS
+   ====================================== */
+.stButton > button {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--gradient-accent);
+    color: white;
+}
+
+/* ======================================
+   SIDEBAR
+   ====================================== */
+[data-testid="stSidebar"] {
+    background: var(--gradient-primary);
+}
+
+[data-testid="stSidebar"] .stButton > button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 100%;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+[data-testid="stSidebar"] .stRadio > label {
+    color: white;
+}
+
+[data-testid="stSidebar"] h1, 
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3 {
+    color: white;
+}
+
+/* ======================================
+   FORMS
+   ====================================== */
+.stTextInput > div > div > input,
+.stSelectbox > div > div > div,
+.stMultiSelect > div > div > div {
+    background-color: var(--background-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+}
+
+.stTextInput > div > div > input:focus,
+.stSelectbox > div > div > div:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+}
+
+/* ======================================
+   TABLES
+   ====================================== */
+.stDataFrame {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.stDataFrame table {
+    background: var(--background-card);
+}
+
+.stDataFrame th {
+    background: var(--background-hover);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.stDataFrame td {
+    color: var(--text-secondary);
+}
+
+/* ======================================
+   TABS
+   ====================================== */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: var(--background-card);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: var(--background-hover);
+    color: var(--text-primary);
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* ======================================
+   EXPANDERS
+   ====================================== */
+.streamlit-expanderHeader {
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--background-card);
+    border-radius: 8px;
+}
+
+.streamlit-expanderContent {
+    background: var(--background-card);
+    border-radius: 0 0 8px 8px;
+}
+
+/* ======================================
+   METRICS
+   ====================================== */
+[data-testid="stMetricValue"] {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--text-secondary);
+}
+
+[data-testid="stMetricDelta"] svg {
+    display: none;
+}
+
+/* ======================================
+   PROGRESS BAR
+   ====================================== */
+.stProgress > div > div > div > div {
+    background: var(--gradient-primary);
+}
+
+/* ======================================
+   FILE UPLOADER
+   ====================================== */
+.stFileUploader {
+    border: 2px dashed var(--primary-color);
+    border-radius: 12px;
+    background: var(--background-card);
+}
+
+.stFileUploader:hover {
+    border-color: var(--secondary-color);
+    background: var(--background-hover);
+}
+
+/* ======================================
+   LEADERBOARD
+   ====================================== */
+.leaderboard-row {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--background-card);
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.leaderboard-row:hover {
+    background: var(--background-hover);
+    transform: translateX(4px);
+}
+
+.leaderboard-medal {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.leaderboard-rank-1 {
+    border-left: 4px solid #FFD700;
+}
+
+.leaderboard-rank-2 {
+    border-left: 4px solid #C0C0C0;
+}
+
+.leaderboard-rank-3 {
+    border-left: 4px solid #CD7F32;
+}
+
+/* ======================================
+   PERFORMANCE COLORS
+   ====================================== */
+.perf-excellent { color: #4CAF50; }
+.perf-good { color: #8BC34A; }
+.perf-fair { color: #FFC107; }
+.perf-poor { color: #FF6B6B; }
+
+/* ======================================
+   HIDE STREAMLIT BRANDING
+   ====================================== */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* ======================================
+   CUSTOM SCROLLBAR
+   ====================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* ======================================
+   ANIMATIONS
+   ====================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ======================================
+   RESPONSIVE ADJUSTMENTS
+   ====================================== */
+@media (max-width: 768px) {
+    .metric-card {
+        padding: 1rem;
+    }
+    
+    .metric-value {
+        font-size: 1.75rem;
+    }
+    
+    .nav-card {
+        padding: 1.25rem 1rem;
+    }
+    
+    .nav-card-icon {
+        font-size: 2.5rem;
+    }
+}
