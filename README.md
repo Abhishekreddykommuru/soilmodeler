@@ -259,14 +259,7 @@ pyyaml>=6.0
 
 ---
 
-## 👥 Credits
 
-**Developed by:**
-- Software Engineering Research Center ()
-- For Language Speech Interface Lab (LSI)
-- 
-
-**Version:** 1.0.0
 
 ---
 
