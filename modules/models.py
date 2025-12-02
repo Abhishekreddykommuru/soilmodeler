@@ -173,7 +173,7 @@ class ModelFactory:
             ])
         
         return model
-    
+    # Get model info
     def get_model_info(self, model_type: str) -> Dict[str, Any]:
         """Get information about a model type."""
         if model_type not in self.MODELS:
@@ -182,11 +182,11 @@ class ModelFactory:
         info = self.MODELS[model_type].copy()
         info['default_params'] = self.DEFAULT_PARAMS[model_type].copy()
         return info
-    
+    # Get info for all models
     def get_all_models(self) -> Dict[str, Dict]:
         """Get information about all available models."""
         return {k: self.get_model_info(k) for k in self.MODELS.keys()}
-    
+    # Feature importance extraction
     def get_feature_importance(self, model, feature_names: list, X_train=None, y_train=None) -> Optional[Dict[str, float]]:
         """
         Extract feature importance from a trained model.
@@ -258,14 +258,14 @@ class ModelFactory:
         except Exception as e:
             return None
 
-
+# Configuration class for model hyperparameters
 class ModelConfig:
     """Configuration class for model hyperparameters."""
     
     def __init__(self, model_type: str):
         self.model_type = model_type
         self.params = ModelFactory.DEFAULT_PARAMS.get(model_type, {}).copy()
-    
+    # Update parameters
     def update(self, **kwargs):
         """Update parameters."""
         self.params.update(kwargs)

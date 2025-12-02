@@ -94,7 +94,7 @@ class Visualizer:
         )
         
         return fig
-    
+    # change model type to method parameter
     def grouped_bar_chart(
         self, 
         results: List[Dict], 
@@ -145,7 +145,7 @@ class Visualizer:
         )
         
         return fig
-    
+    # Create a heatmap of model performance
     def performance_heatmap(
         self, 
         results: List[Dict], 

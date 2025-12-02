@@ -21,7 +21,7 @@ from .preprocessing import SpectralPreprocessor
 from .models import ModelFactory
 from .evaluation import ModelEvaluator
 
-
+# Main Training Orchestrator Class
 class TrainingOrchestrator:
     """Orchestrates the automated training pipeline."""
     
@@ -231,7 +231,7 @@ class TrainingOrchestrator:
         self._save_run_metadata(run_dir, summary, df, target_col)
         
         return summary
-    
+    # Save run metadata
     def _save_run_metadata(
         self, 
         run_dir: Path, 
@@ -259,7 +259,7 @@ class TrainingOrchestrator:
         # Save results as CSV
         results_df = pd.DataFrame(summary['results'])
         results_df.to_csv(run_dir / 'results.csv', index=False)
-    
+    # Get results as DataFrame
     def get_results_dataframe(self) -> pd.DataFrame:
         """Get results as a DataFrame."""
         if not self.results:
