@@ -141,7 +141,7 @@ class DataLoader:
             'n_columns': len(df.columns),
             'n_features': len(df.columns) - 1,  # Assuming last column is target
             'columns': list(df.columns),
-            'missing_values': df.isnull().sum().sum(),
+            'missing_values': df.isnull().sum().sum(), # Adding the missing values
             'missing_percentage': (df.isnull().sum().sum() / df.size) * 100,
             'duplicates': df.duplicated().sum(),
             'memory_mb': df.memory_usage(deep=True).sum() / (1024 * 1024)
@@ -160,7 +160,7 @@ class DataLoader:
             metadata['spectral_range'] = f"{min(numeric_cols):.0f}-{max(numeric_cols):.0f} nm"
             metadata['spectral_resolution'] = f"~{(max(numeric_cols) - min(numeric_cols)) / len(numeric_cols):.1f} nm"
         else:
-            metadata['spectral_range'] = "Not detected"
+            metadata['spectral_range'] = "Not detected" #metadata not detected
             metadata['spectral_resolution'] = "N/A"
         
         # Data quality score
@@ -168,7 +168,7 @@ class DataLoader:
         if metadata['missing_percentage'] > 0:
             quality_score -= min(3, metadata['missing_percentage'])
         if metadata['duplicates'] > 0:
-            quality_score -= min(2, metadata['duplicates'] / len(df) * 10)
+            quality_score -= min(2, metadata['duplicates'] / len(df) * 10) # Analyzing the quality score 
         
         metadata['quality_score'] = max(0, quality_score)
         metadata['quality_label'] = self._get_quality_label(metadata['quality_score'])
